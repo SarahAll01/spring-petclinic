@@ -42,7 +42,7 @@ jobs:
 
       - name: Build image with Spring Boot Buildpacks
         run: |
-          ./mvnw -DskipTests             -Dspring-boot.build-image.imageName=spring-petclinic:${{ steps.get_version.outputs.version }}             spring-boot:build-image
+          ./mvnw -DskipTests -Dspring-boot.build-image.imageName=spring-petclinic:${{ steps.get_version.outputs.version }} spring-boot:build-image
 
       - name: Tag and push image to GHCR
         run: |
